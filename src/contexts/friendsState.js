@@ -1,9 +1,10 @@
 import { useReducer } from "react";
 import friendsContext from "./friendsContext";
 import friendsReducer from '../reducers/friendsReducer';
+import db from '../db/drillDb';
 
 const initialState = {
-    friends: []
+    friends: [...db]
 }
 function FriendsState(props) {
     const [friends, dispatch] = useReducer(friendsReducer, initialState);
