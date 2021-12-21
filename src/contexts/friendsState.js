@@ -4,7 +4,7 @@ import friendsReducer from '../reducers/friendsReducer';
 import db from '../db/drillDb';
 
 const initialState = {
-    friends: [...db]
+    friendsList: [...db]
 }
 function FriendsState(props) {
     const [friends, dispatch] = useReducer(friendsReducer, initialState);

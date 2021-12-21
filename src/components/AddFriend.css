@@ -1,0 +1,8 @@
+#add-friend {
+    border: 1px solid;
+    height: 40vh;
+    text-align: center;
+}
+.add-friend-input {
+    margin-bottom: 10%;
+}
