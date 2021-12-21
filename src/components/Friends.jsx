@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import friendsContext from '../contexts/friendsContext';
 import Friend from "./Friend";
+import { nanoid } from'nanoid';
 
 function Friends() {
-    const {friends, dispatch} = useContext(friendsContext);
+    const {friends, /*dispatch*/} = useContext(friendsContext);
     const { friendsList } = friends;
     return(
         <div id='friends'>
             {friendsList.map(({name, age}) => (
-                <Friend name={name} age={age} />
+                <Friend key={nanoid()} name={name} age={age} />
             ))}
         </div>
     )
