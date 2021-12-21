@@ -1,0 +1,12 @@
+#update-friend {
+    border: 1px solid;
+    height: 40vh;
+    text-align: center;
+}
+.update-friend-input, #friend-to-update {
+    margin-bottom: 5%;
+}
+
+#friend-to-update {
+    font-size: large;
+}

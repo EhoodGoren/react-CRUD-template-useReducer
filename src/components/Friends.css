@@ -6,6 +6,10 @@
     margin: 10px;
     padding: 3px;
     justify-content: space-between;
+    background-color: #F3F3D1;
+}
+.friend:hover {
+    background-color: #D9D9BF;
 }
 .remove-friend {
     margin-right: 10px;

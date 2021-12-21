@@ -5,12 +5,14 @@ export default function friendsReducer(state, action) {
     switch (action.type) {
         case 'INITIAL_STATE': {
             return {
-                friendsList: [...db]
+                friendsList: [...db],
+                friendToUpdate: ''
             }
         }
         case 'ADD_FRIEND': {
             const { name, age } = action
             return {
+                ...state,
                 friendsList: [
                     ...state.friendsList, {
                     name,
@@ -22,12 +24,13 @@ export default function friendsReducer(state, action) {
         case 'REMOVE_FRIEND': {
             const updatedFriends = state.friendsList.filter(friend => friend.id !== action.id)
             return {
+                ...state,
                 friendsList: [...updatedFriends]
             }
         }
         case 'UPDATE_FRIEND': {
             const { name, age, id } = action;
-            const updatedFriends = state.friends.map(friend => {
+            const updatedFriends = state.friendsList.map(friend => {
                 if(friend.id === id) {
                     return {
                         ...friend,
@@ -39,7 +42,16 @@ export default function friendsReducer(state, action) {
                 }
             })
             return {
-                friendsList: [...updatedFriends]
+                ...state,
+                friendsList: [...updatedFriends],
+                friendToUpdate: ''
+            }
+        }
+        case 'SELECT_UPDATE': {
+            const {name, age, id} = action;
+            return {
+                ...state,
+                friendToUpdate: { id, name, age }
             }
         }
         default:

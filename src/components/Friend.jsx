@@ -10,8 +10,16 @@ function Friend({ id, name, age }) {
             id
         })
     }
+    const selectFriendToUpdate = () => {
+        dispatch({
+            type: 'SELECT_UPDATE',
+            id,
+            name,
+            age
+        })
+    }
     return(
-        <div className='friend'>
+        <div className='friend' onClick={selectFriendToUpdate}>
             <span>{name}, {age}</span>
             <button className='remove-friend' onClick={removeFriend}>REMOVE</button>
         </div>
