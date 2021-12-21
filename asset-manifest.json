@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-CRUD-template-useReducer/static/css/main.9ffeae0a.css",
+    "main.js": "/react-CRUD-template-useReducer/static/js/main.a1c5dfc7.js",
+    "index.html": "/react-CRUD-template-useReducer/index.html",
+    "main.9ffeae0a.css.map": "/react-CRUD-template-useReducer/static/css/main.9ffeae0a.css.map",
+    "main.a1c5dfc7.js.map": "/react-CRUD-template-useReducer/static/js/main.a1c5dfc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ffeae0a.css",
+    "static/js/main.a1c5dfc7.js"
+  ]
+}
