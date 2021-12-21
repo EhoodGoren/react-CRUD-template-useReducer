@@ -10,7 +10,8 @@ function Friend({ id, name, age }) {
             id
         })
     }
-    const selectFriendToUpdate = () => {
+    const selectFriendToUpdate = (e) => {
+        if(e.target.className.includes('remove-friend')) return
         dispatch({
             type: 'SELECT_UPDATE',
             id,
