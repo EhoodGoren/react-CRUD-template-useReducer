@@ -27,17 +27,16 @@ export default function friendsReducer(state, action) {
         }
         case 'UPDATE_FRIEND': {
             const { name, age, id } = action;
-            const updatedFriends = state.friends.map(
-                ({name: friendName, age: friendAge, id: friendId}) => {
-                    if(friendId === id) {
-                        return {
-                            name: name || friendName,
-                            age: age || friendAge,
-                            id: friendId
-                        }
-                    } else {
-                        return {friendName, friendAge, friendId};
+            const updatedFriends = state.friends.map(friend => {
+                if(friend.id === id) {
+                    return {
+                        ...friend,
+                        name: name || friend.name,
+                        age: age || friend.age
                     }
+                } else {
+                    return friend
+                }
             })
             return {
                 friends: [...updatedFriends]
